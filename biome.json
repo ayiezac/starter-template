@@ -1,69 +1,26 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
 	"vcs": {
-		"enabled": true,
+		"enabled": false,
 		"clientKind": "git",
-		"useIgnoreFile": true,
-		"defaultBranch": "main"
+		"useIgnoreFile": false
 	},
 	"files": {
-		"ignoreUnknown": true
+		"ignoreUnknown": false
 	},
 	"formatter": {
 		"enabled": true,
-		"indentStyle": "space",
-		"indentWidth": 2,
-		"lineWidth": 100
+		"indentStyle": "tab"
 	},
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true,
-			"correctness": {
-				"noUnusedVariables": "error",
-				"noUnusedImports": "error",
-				"noUndeclaredVariables": "error",
-				"useExhaustiveDependencies": "warn",
-				"useHookAtTopLevel": "error"
-			},
-			"suspicious": {
-				"noExplicitAny": "error",
-				"noConsole": "warn",
-				"noVar": "error",
-				"noDuplicateTestHooks": "error",
-				"noExportsInTest": "error",
-				"noFocusedTests": "error",
-				"noThenProperty": "warn"
-			},
-			"style": {
-				"noParameterAssign": "off",
-				"useImportType": "error"
-			},
-			"a11y": {
-				"recommended": true,
-				"noSvgWithoutTitle": "off",
-				"useMediaCaption": "off"
-			},
-			"complexity": {
-				"recommended": true
-			},
-			"performance": {
-				"recommended": true,
-				"noAccumulatingSpread": "off"
-			},
-			"security": {
-				"recommended": true
-			}
+			"recommended": true
 		}
 	},
 	"javascript": {
 		"formatter": {
-			"quoteStyle": "single",
-			"trailingCommas": "es5",
-			"semicolons": "always",
-			"arrowParentheses": "always",
-			"jsxQuoteStyle": "double"
-			
+			"quoteStyle": "double"
 		}
 	},
 	"assist": {
@@ -75,3 +32,4 @@
 		}
 	}
 }
+
