@@ -13,12 +13,7 @@ export default defineConfig({
 		},
 		preprocessorOptions: {
 			scss: {
-				silenceDeprecations: [
-					"import",
-					"mixed-decls",
-					"color-functions",
-					"global-builtin",
-				],
+				silenceDeprecations: ["import", "mixed-decls", "color-functions", "global-builtin"],
 			},
 		},
 		transformer: "lightningcss",
