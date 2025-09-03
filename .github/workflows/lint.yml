@@ -1,35 +1,61 @@
-name: Lint
+# name: Lint
+
+# on:
+#   push:
+#   pull_request:
+
+# jobs:
+#   build:
+
+#     runs-on: ubuntu-latest
+#     permissions: 
+#       contents: read
+
+#     steps:
+#       - uses: actions/checkout@v5
+#         with:
+#           persist-credentials: false
+#       - name: Install pnpm
+#         uses: pnpm/action-setup@v4
+#         with:
+#           version: 10
+#       - name: Use Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 22.x
+#       - run: pnpm i
+#       - run: pnpm lint
+
+#        # Setup Biome
+#       - name: Setup Biome
+#         uses: biomejs/setup-biome@v2
+#         with:
+#           version: latest
+
+#       # Run Biome check
+#       - name: Run Biome
+#         run: biome ci .
+
+name: Code quality
 
 on:
   push:
   pull_request:
 
 jobs:
-  build:
-
+  quality:
     runs-on: ubuntu-latest
-    permissions: 
+    permissions:
       contents: read
-
     steps:
-      - uses: actions/checkout@v5
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - name: Checkout
+        uses: actions/checkout@v5
         with:
-          version: 10
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.x
-      - run: pnpm i
-      - run: pnpm lint
-
-       # Setup Biome
+          persist-credentials: false
       - name: Setup Biome
         uses: biomejs/setup-biome@v2
         with:
-          version: latest
-
-      # Run Biome check
+          version: 2.0.6
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Biome
         run: biome ci .
